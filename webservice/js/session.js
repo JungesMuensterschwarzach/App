@@ -23,7 +23,7 @@ function registerLogin() {
         const password = loginForm.find("input[name='password']").val();
 
         $.ajax({
-            url: "/app-backend/endpoints/account_sessions.php",
+            url: "/endpoints/account_sessions.php",
             type: 'POST',
             data: $.param({
                 "action": "signIn",
@@ -41,7 +41,7 @@ function registerLogin() {
                 }
 
                 registerSessionValidationTask();
-                forwardTo("/app-backend/index.php");
+                forwardTo("/index.php");
             },
             error: error => {
                 showErrorMessage(error);
@@ -59,12 +59,12 @@ function registerLogout() {
 
     const userId = (document.cookie.match(/^(?:.*;)?\s*(__Secure-)?userId\s*=\s*([^;]+)(?:.*)?$/)||[,,null])[2];
     if (userId === null) {
-        forwardTo("/app-backend/login.php");
+        forwardTo("/login.php");
         return;
     }
 
     $.ajax({
-        url: "/app-backend/endpoints/account_sessions.php",
+        url: "/endpoints/account_sessions.php",
         type: 'POST',
         data: $.param({
             "action": "signOut"
@@ -72,11 +72,11 @@ function registerLogout() {
         contentType: 'application/x-www-form-urlencoded',
         success: response => {
             unregisterSessionValidationTask();
-            forwardTo("/app-backend/login.php");
+            forwardTo("/login.php");
         },
         error: error => {
             unregisterSessionValidationTask();
-            forwardTo("/app-backend/login.php");
+            forwardTo("/login.php");
         }
     });
 }
@@ -122,7 +122,7 @@ function registerSessionValidationTask() {
 
 function runSessionValidationTask() {
     $.ajax({
-        url: "/app-backend/endpoints/account_sessions.php",
+        url: "/endpoints/account_sessions.php",
         type: 'POST',
         data: $.param({
             "action": "signIn"
@@ -137,7 +137,7 @@ function runSessionValidationTask() {
                 console.log("[AUTHENTICATION] Session is not valid anymore.");
                 unregisterSessionValidationTask();
                 setTimeout(
-                    forwardTo.bind(null, "/app-backend/logout.php"),
+                    forwardTo.bind(null, "/logout.php"),
                     3 * 1000
                 );
             } else {
@@ -150,7 +150,7 @@ function runSessionValidationTask() {
         },
         error: error => {
             unregisterSessionValidationTask();
-            forwardTo("/app-backend/logout.php");
+            forwardTo("/logout.php");
         }
     });
 }

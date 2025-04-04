@@ -10,7 +10,7 @@
 		define("ROOT_LOCAL", dirname(__FILE__) . "/..");
 	}
 	if (defined("ROOT_PUBLIC") === false) {
-		define("ROOT_PUBLIC", "/");
+		define("ROOT_PUBLIC", "");
 	}
 
 

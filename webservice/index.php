@@ -52,8 +52,8 @@
 						<li>
 							<strong>Test-System (für Zugriff bei Lucas melden)</strong>
 							<ul>
-								<li><a href="https://www.luckev.info/app" target="_blank">App</a></li>
-								<li><a href="https://www.luckev.info/app-backend" target="_blank">Admin-Bereich</a></li>
+								<li><a href="https://app.test.junges-muensterschwarzach.roth-familie.eu" target="_blank">App</a></li>
+								<li><a href="https://app-backend.test.junges-muensterschwarzach.roth-familie.eu" target="_blank">Admin-Bereich</a></li>
 							</ul>
 						</li>
 					</ul>
