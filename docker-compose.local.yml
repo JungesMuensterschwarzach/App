@@ -2,7 +2,6 @@ version: '3'
 services:
   proxy:
     container_name: proxy
-    image: jenkinsluckev/jma-proxy:local
     build:
       context: .
       dockerfile: Dockerfile.proxy
