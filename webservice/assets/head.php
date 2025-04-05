@@ -21,14 +21,14 @@
 <!-- CSP for XSS Prevention -->
 <meta http-equiv="Content-Security-Policy"
     content="
-      default-src 'self' localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu; 
-      script-src  'self' 'unsafe-inline' blob: localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud *.mapbox.com; 
-      connect-src 'self' blob: localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud *.mapbox.com; 
-      img-src     'self' blob: data: localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud *.ytimg.com *.tenor.com *.mapbox.com; 
-      frame-src   'self' localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.youtube.com;
-      media-src   'self' localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.youtube.com; 
-      style-src   'self' 'unsafe-inline' localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud fonts.googleapis.com *.mapbox.com; 
-      font-src    'self' localhost localhost:3000 luckev.info www.luckev.info app.jugendarbeit-muensterschwarzach.de junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud fonts.gstatic.com;"
+      default-src 'self' localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu; 
+      script-src  'self' 'unsafe-inline' blob: localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud *.mapbox.com; 
+      connect-src 'self' blob: localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud *.mapbox.com; 
+      img-src     'self' blob: data: localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud *.ytimg.com *.tenor.com *.mapbox.com; 
+      frame-src   'self' localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.youtube.com;
+      media-src   'self' localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.youtube.com; 
+      style-src   'self' 'unsafe-inline' localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud fonts.googleapis.com *.mapbox.com; 
+      font-src    'self' localhost localhost:3000 app.test.junges-muensterschwarzach.roth-familie.eu app.junges-muensterschwarzach.roth-familie.eu *.tinymce.com *.tiny.cloud fonts.gstatic.com;"
 />
 <!-- JMA -->
 <title><?php echo($GLOBALS["dict"]["general_web_title"]);?></title>
