@@ -17,7 +17,7 @@
                 array(
                     "expires" => $expire,
                     "path" => "/",
-                    "domain" => $_SERVER["HTTP_HOST"],
+                    "domain" => "junges-muensterschwarzach.roth-familie.eu",
                     "secure" => GlobalFunctions::isSSLRequest(),
                     "httponly" => $httpOnly,
                     "samesite"=> "Lax"
