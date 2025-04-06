@@ -6,6 +6,7 @@ ENV SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.
     SUPERCRONIC_SHA1SUM=048b95b48b708983effb2e5c935a1ef8483d9e3e
 COPY ./webservice ./
 COPY ./webservice/deployment/php.ini "$PHP_INI_DIR/php.ini"
+RUN a2enmod headers
 RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 ADD nginx/abtei-muensterschwarzach.de.crt /usr/local/share/ca-certificates/abtei-muensterschwarzach.de.crt

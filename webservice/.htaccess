@@ -1,0 +1,5 @@
+SetEnvIf Origin "^https://(app\.junges\-muensterschwarzach\.roth\-familie\.eu|app\.test\.junges\-muensterschwarzach\.roth\-familie\.eu)$" AccessControlAllowOrigin=$0
+Header always set Access-Control-Allow-Origin "%{AccessControlAllowOrigin}e" env=AccessControlAllowOrigin
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+Header always set Access-Control-Allow-Credentials "true"
