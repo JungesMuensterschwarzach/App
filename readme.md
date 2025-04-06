@@ -1,3 +1,6 @@
+> [!WARNING]  
+> It has been decided for some time to retire this software and integrate its use cases into more maintainable software (especially by non-tech-savvy people), which mainly means a Joomla CMS instance. Henceforth, only minimal "keepalive" commits are added here for some time until the production instance is decomissioned.
+
 <p align="center">
   <a href="https://github.com/JungesMuensterschwarzach/App">
     <img src="./app/public/icons/512x512.png" alt="Logo" width="200" height="200">
