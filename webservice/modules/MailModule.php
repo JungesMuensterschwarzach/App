@@ -325,7 +325,7 @@
 		private static function getAccountTokenUrl($code) {
 			return 
 				GlobalFunctions::getRequestProtocol() . "://" 
-				. $_SERVER["HTTP_HOST"] . MAIL_ACCOUNT_TOKEN_URL 
+				. APP_BASEURLS_APP . MAIL_ACCOUNT_TOKEN_URL 
 				. rawurlencode($code);
 		}
 
@@ -333,7 +333,7 @@
 		private static function getNewsletterTokenUrl($code) {
 			return
 				GlobalFunctions::getRequestProtocol() . "://"
-				. $_SERVER["HTTP_HOST"] . MAIL_NEWSLETTER_TOKEN_URL
+				. APP_BASEURLS_APP . MAIL_NEWSLETTER_TOKEN_URL
 				. rawurlencode($code);
 		}
 
@@ -341,14 +341,14 @@
 		private static function getProfileUrl() {
 			return
 				GlobalFunctions::getRequestProtocol() . "://"
-				. $_SERVER["HTTP_HOST"] . MAIL_PROFILE_URL;
+				. APP_BASEURLS_APP . MAIL_PROFILE_URL;
 		}
 
 		// MIGRATED
 		private static function getEventParticipantsUrl($eventId) {
 			return 
 				GlobalFunctions::getRequestProtocol() . "://" 
-				. $_SERVER["HTTP_HOST"] . MAIL_EVENT_PARTICIPANTS_URL
+				. APP_BASEURLS_APP . MAIL_EVENT_PARTICIPANTS_URL
 				. $eventId;
 		}
 
