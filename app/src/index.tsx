@@ -35,5 +35,5 @@ ReactDOM.render(
   document.getElementById("root") as HTMLElement
 );
 
-DeprecationService.run();
+// DeprecationService.run();
 ServiceWorkerRegistrationService.register();

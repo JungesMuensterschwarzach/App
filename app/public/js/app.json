@@ -1,8 +1,9 @@
 {
     "BaseUrls": {
-        "APP": "http://localhost/app",
-        "CONTACT_LINK": "mailto:lucas@luckev.info?subject=%5BJunges%20M%C3%BCnsterschwarzach%20App%5D%20Kontaktanfrage&body=%7BBeschreibe%20dein%20Anliegen%20hier.%7D",
-        "WEBSERVICE": "http://localhost/app-backend/endpoints"
+        "APP": "http://app.jma.local",
+        "COOKIE": ".jma.local",
+        "CONTACT_LINK": "mailto:junges_muensterschwarzach@pfarrei-meiningen.de?subject=%5BJunges%20M%C3%BCnsterschwarzach%20App%5D%20Kontaktanfrage&body=%7BBeschreibe%20dein%20Anliegen%20hier.%7D",
+        "WEBSERVICE": "http://app-backend.jma.local/endpoints"
     },
     "PNConfig": {
         "SERVER_PUB": "BMrgKPvCczxDcoBO2xCXaOfe6WZ64Dqk3CyboKWJsnae4QTR2Jb1QwnyUDFDIoLj9_7-CSlATeO_83BvLCnSq9g"

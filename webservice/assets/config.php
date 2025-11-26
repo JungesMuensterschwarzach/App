@@ -11,6 +11,7 @@
 		define("APP_BASEURLS_APP", $app_config["BaseUrls"]["APP"]);
 		define("APP_BASEURLS_CONTACT_LINK", $app_config["BaseUrls"]["CONTACT_LINK"]);
 		define("APP_BASEURLS_WEBSERVICE", $app_config["BaseUrls"]["WEBSERVICE"]);
+		define("APP_BASEURLS_COOKIE", $app_config["BaseUrls"]["COOKIE"]);
 		define("APP_LOADED", true);
 	}
 

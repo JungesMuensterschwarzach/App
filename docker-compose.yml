@@ -1,4 +1,3 @@
-version: '3'
 services:
   jma-database-backup-updater:
     container_name: jma-database-backup-updater

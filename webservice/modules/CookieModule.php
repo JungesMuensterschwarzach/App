@@ -17,7 +17,7 @@
                 array(
                     "expires" => $expire,
                     "path" => "/",
-                    "domain" => "junges-muensterschwarzach.roth-familie.eu",
+                    "domain" => APP_BASEURLS_COOKIE,
                     "secure" => GlobalFunctions::isSSLRequest(),
                     "httponly" => $httpOnly,
                     "samesite"=> "Lax"
