@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import { TextField } from "@material-ui/core";
+import { MuiThemeProvider, TextField } from "@material-ui/core";
 
 import { Dict } from "../../constants/dict";
 import Formats from "../../constants/formats";
-import { grid1Style, textFieldInputProps } from "../../constants/theme";
+import { getTextFieldTheme, grid1Style, textFieldInputProps, ThemeTypes } from "../../constants/theme";
 import { IUserKeys } from "../../networking/account_data/IUser";
 
 interface ILastNameInputProps {
@@ -13,15 +13,18 @@ interface ILastNameInputProps {
     onError: (key: IUserKeys.lastName, value: string | null) => void;
     onUpdateValue: (key: IUserKeys.lastName, value: string) => void;
     required?: boolean;
+    suppressErrorMsg?: boolean;
+    themeType?: ThemeTypes;
     value: string;
 }
 
+export const LAST_NAME_INPUT_LOCAL_ERROR_MESSAGES = [
+    Dict.account_lastName_required,
+    Dict.account_lastName_invalid,
+];
+
 const LastNameInput = (props: ILastNameInputProps) => {
-    const LOCAL_ERROR_MESSAGES = React.useMemo(
-        () => [Dict.account_lastName_required, Dict.account_lastName_invalid],
-        []
-    );
-    const { errorMessage, onBlur, onError, onUpdateValue, required, value } =
+    const { errorMessage, onBlur, onError, onUpdateValue, required, suppressErrorMsg, themeType, value } =
         props;
 
     const onChange = React.useCallback(
@@ -57,7 +60,7 @@ const LastNameInput = (props: ILastNameInputProps) => {
         // do not overwrite server side error messages
         if (
             errorMessage !== localErrorMessage &&
-            (!errorMessage || LOCAL_ERROR_MESSAGES.includes(errorMessage))
+            (!errorMessage || LAST_NAME_INPUT_LOCAL_ERROR_MESSAGES.includes(errorMessage))
         ) {
             onError(IUserKeys.lastName, localErrorMessage);
         }
@@ -65,23 +68,25 @@ const LastNameInput = (props: ILastNameInputProps) => {
     }, [value]);
 
     return (
-        <TextField
-            error={errorMessage != null}
-            helperText={errorMessage}
-            inputProps={{
-                ...textFieldInputProps,
-                maxLength: Formats.LENGTH.MAX.LAST_NAME,
-            }}
-            label={Dict.account_lastName}
-            margin="dense"
-            name={IUserKeys.lastName}
-            onBlur={onLocalBlur}
-            onChange={onChange}
-            style={grid1Style}
-            type="text"
-            value={value}
-            variant="outlined"
-        />
+        <MuiThemeProvider theme={getTextFieldTheme(themeType)}>
+            <TextField
+                error={errorMessage != null && !suppressErrorMsg}
+                helperText={suppressErrorMsg ? null : errorMessage}
+                inputProps={{
+                    ...textFieldInputProps,
+                    maxLength: Formats.LENGTH.MAX.LAST_NAME,
+                }}
+                label={Dict.account_lastName}
+                margin="dense"
+                name={IUserKeys.lastName}
+                onBlur={onLocalBlur}
+                onChange={onChange}
+                style={grid1Style}
+                type="text"
+                value={value}
+                variant="outlined"
+            />
+        </MuiThemeProvider>
     );
 };
 

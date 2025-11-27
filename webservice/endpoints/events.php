@@ -87,6 +87,15 @@
 		$response->setSuccessMsg("event_user_checked_in");
 	}
 
+	function checkInExpress($ownUser, $response) {
+		$userId = UserModule::getUserIdByName($_POST["firstName"], $_POST["lastName"]);
+		$user = UserModule::loadUser($userId, ACCESS_LEVEL_DEVELOPER);
+		$event = EventModule::getCurrentEvent();
+
+		EventModule::checkIn($user["userId"], $event["eventId"], $_POST["eventEnrollmentPublicMediaUsageConsent"], $user["accessLevel"]);
+		$response->setSuccessMsg("event_user_checked_in");
+	}
+
 	function updateEventEnrollmentPublicMediaUsageConsent($ownUser, $response) {
 		if ($ownUser === null) {
 			throw new Exception("error_message_account_required");

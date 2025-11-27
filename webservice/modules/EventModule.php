@@ -546,6 +546,28 @@
 			return self::loadEvent($eventId, ACCESS_LEVEL_DEVELOPER);
 		}
 
+		public static function getCurrentEvent() {
+			$sql = "SELECT eventId
+					FROM events
+					WHERE eventStart<=NOW() AND NOW()<=eventEnd
+					ORDER BY eventStart";
+			$stmt = DatabaseModule::getInstance()->prepare($sql);
+			
+			if ($stmt->execute() === false) {
+				$stmt->close();
+				throw new Exception("error_message_try_later");
+			}
+			
+			$event = $stmt->get_result()->fetch_assoc();
+			$stmt->close();
+
+			if ($event === null) {
+				throw new Exception("event_not_exists");
+			}
+
+			return self::loadEvent($event["eventId"], ACCESS_LEVEL_DEVELOPER);
+		}
+
 		public static function createEvent($eventTitle, $eventTopic, $eventDetails, $eventStart, $eventEnd, $eventEnrollmentStart, $eventEnrollmentEnd, 
 				$eventOfferId, $eventScheduleId, $eventTargetGroupId, $eventPriceId, $eventPackingListId, $eventLocationId, $eventArrivalId, $requiredAccessLevel, $ownAccessLevel) {
 			self::validateEventTitle($eventTitle);

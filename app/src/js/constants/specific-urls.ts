@@ -2,6 +2,7 @@ export enum AppUrls {
     // will be prepended with the current address
     CHANGELOG = "/changelog",
     CONTACT = "/contact",
+    EVENTS_CHECKIN_EXPRESS = "/events/checkin",
     EVENTS_LIST = "/events",
     EVENTS_ITEM = "/events/:id",
     EVENTS_ITEM_TAB = "/events/:id/:tab",

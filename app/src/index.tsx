@@ -14,7 +14,6 @@ import App from './App';
 import Formats from './js/constants/formats';
 import getTheme from './js/constants/theme';
 import { ServiceWorkerRegistrationService } from './js/services/ServiceWorkerRegistrationService';
-import { DeprecationService } from './js/services/DeprecationService';
 
 if (process.env.NODE_ENV === "production") {
   log.setLevel(log.levels.DEBUG);
@@ -35,5 +34,4 @@ ReactDOM.render(
   document.getElementById("root") as HTMLElement
 );
 
-// DeprecationService.run();
 ServiceWorkerRegistrationService.register();

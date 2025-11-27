@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 
 import HeaderNavigation from "./js/components/navigation/HeaderNavigation";
 import ChangelogPage from "./js/components/pages/ChangelogPage";
+import EventCheckInExpressPage from "./js/components/pages/EventCheckInExpressPage";
 import EventItemPage from "./js/components/pages/EventItemPage";
 import EventListPage from "./js/components/pages/EventListPage";
 import HelpPage from "./js/components/pages/HelpPage";
@@ -227,6 +228,10 @@ const App = () => {
                     <Route
                         path={AppUrls.CHANGELOG}
                         element={<ChangelogPage />}
+                    />
+                    <Route
+                        path={AppUrls.EVENTS_CHECKIN_EXPRESS}
+                        element={<EventCheckInExpressPage />}
                     />
                     <Route
                         path={AppUrls.EVENTS_LIST}

@@ -115,6 +115,25 @@
 			}
 			return intval($user["userId"]);
 		}
+
+		public static function getUserIdByName($firstName, $lastName) {
+			$stmt = DatabaseModule::getInstance()->prepare(
+				"SELECT userId FROM account_data WHERE firstName=? AND lastName=? ORDER BY userId"
+			);
+			$stmt->bind_param("ss", $firstName, $lastName);
+			
+			if ($stmt->execute() === false) {
+				$stmt->close();
+				throw new Exception("error_message_try_later");
+			}
+			$user = $stmt->get_result()->fetch_assoc();
+			$stmt->close();
+
+			if ($user === null) {
+				throw new Exception("account_id_not_exists");
+			}
+			return intval($user["userId"]);
+		}
 		
 		public static function loadUser($userId, $ownAccessLevel) {
 			if ($userId === null) {

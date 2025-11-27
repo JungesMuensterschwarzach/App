@@ -147,6 +147,36 @@ const textFieldLightTheme: Theme = createTheme({
     }
 });
 
+/* checkbox theme */
+
+export function getCheckboxTheme(style: ThemeTypes | undefined): Theme {
+    if (style === ThemeTypes.LIGHT) {
+        return checkBoxLightTheme;
+    } else {
+        return getTheme();
+    }
+}
+
+const checkBoxLightTheme: Theme = createTheme({
+    overrides: {
+        MuiCheckbox: {
+            root: {
+                "&:not(#fake)": {
+                    color: "rgba(255, 255, 255, 1)"
+                }
+            }
+        },
+        MuiTypography: {
+            root: {
+                // adding fake-Ids increases the selectors specificy and overwrites the default of mui
+                "&:not(#fake)": {
+                    color: "rgba(255, 255, 255, 0.8)"
+                }
+            }
+        }
+    }
+});
+
 export const textFieldInputProps: InputBaseComponentProps = {
     style: {
     }

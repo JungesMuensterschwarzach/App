@@ -1,9 +1,9 @@
 import * as React from "react";
 
-import { Checkbox, Typography } from "@material-ui/core";
+import { MuiThemeProvider, Checkbox, Typography } from "@material-ui/core";
 
 import { Dict } from "../../constants/dict";
-import { grid1Style } from "../../constants/theme";
+import { getCheckboxTheme, grid1Style, ThemeTypes } from "../../constants/theme";
 import ErrorMessageTypography from "./ErrorMessageTypography";
 import { IEventEnrollmentKeys } from "../../networking/events/IEventEnrollment";
 
@@ -19,12 +19,13 @@ interface IPublicMediaUsageConsentCheckboxProps {
         value: number
     ) => void;
     style?: React.CSSProperties;
+    themeType?: ThemeTypes;
 }
 
 const PublicMediaUsageConsentCheckbox = (
     props: IPublicMediaUsageConsentCheckboxProps
 ) => {
-    const { checked, errorMessage, onBlur, onUpdateValue, style } = props;
+    const { checked, errorMessage, onBlur, onUpdateValue, style, themeType } = props;
     const [isBlurScheduled, setIsBlurScheduled] =
         React.useState<boolean>(false);
 
@@ -60,7 +61,7 @@ const PublicMediaUsageConsentCheckbox = (
     }, [checked, isBlurScheduled, onBlur]);
 
     return (
-        <>
+        <MuiThemeProvider theme={getCheckboxTheme(themeType)}>
             <div style={contentDivStyle}>
                 <Checkbox
                     checked={checked}
@@ -76,7 +77,7 @@ const PublicMediaUsageConsentCheckbox = (
             <ErrorMessageTypography
                 value={errorMessage}
             />
-        </>
+        </MuiThemeProvider>
     );
 };
 
