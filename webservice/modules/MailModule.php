@@ -344,7 +344,8 @@
 		// MIGRATED
 		private static function getEventParticipantsUrl($eventId) {
 			return 
-				APP_BASEURLS_APP . MAIL_EVENT_PARTICIPANTS_URL
+				substr(APP_BASEURLS_WEBSERVICE, 0, -strlen("/endpoints"))
+				. MAIL_EVENT_PARTICIPANTS_URL
 				. $eventId;
 		}
 
