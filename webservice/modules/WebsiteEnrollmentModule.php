@@ -279,7 +279,8 @@
 				$savedMailKey = $key;
 				switch ($key) {
 					case array_keys($keyDict)[0]:
-						$savedValue = EventModule::getNextEventByTitle($value);
+						$title = explode(' ', $value)[0];
+						$savedValue = EventModule::getNextEventByTitle($title);
 						break;
 					case array_keys($keyDict)[9]:
 						$savedValue = strtolower($value);
