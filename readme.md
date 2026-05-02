@@ -1,5 +1,5 @@
-> [!WARNING]  
-> It has been decided for some time to retire this software and integrate its use cases into more maintainable software (especially by non-tech-savvy people), which mainly means a Joomla CMS instance. Henceforth, only minimal "keepalive" commits are added here for some time until the production instance is decomissioned.
+> [!NOTE]  
+> This project is deprecated and not in active use anymore.
 
 <p align="center">
   <a href="https://github.com/JungesMuensterschwarzach/App">
@@ -10,15 +10,6 @@
 
   <p align="center">
     This repository contains the source code of the components related to the community app of Junges Münsterschwarzach.
-    <br />
-    <br />
-    <a href="https://www.luckev.info/app">Development Version</a>
-    ·
-    <a href="https://junges-muensterschwarzach.roth-familie.eu">Production Version</a>
-    ·
-    <a href="https://github.com/JungesMuensterschwarzach/App/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/JungesMuensterschwarzach/App/issues">Request Feature</a>
   </p>
 </p>
 
@@ -44,10 +35,6 @@ This respository contains the components related to the community app of Junges 
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
-
-### Current build status:
-Development Version:&nbsp;&nbsp;&nbsp;[![Build Status](https://luckev.info/jenkins/buildStatus/icon?job=Projects%2FJunges+M%C3%BCnsterschwarzach%2FApp%2F%28Development%29+Build%2BPush)](https://luckev.info/jenkins/job/Projects/job/Junges%20M%C3%BCnsterschwarzach/job/App/job/(Development)%20Build+Push/)<br/>
-Production Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://luckev.info/jenkins/buildStatus/icon?job=Projects%2FJunges+M%C3%BCnsterschwarzach%2FApp%2F%28Production%29+Build%2BPush)](https://luckev.info/jenkins/job/Projects/job/Junges%20M%C3%BCnsterschwarzach/job/App/job/(Production)%20Build+Push/)
 
 ### Prerequisites
 
@@ -126,7 +113,7 @@ Distributed under the GNU Affero General Public License. See [LICENSE](./LICENSE
 <!-- CONTACT -->
 ## Contact
 
-Lucas Kinne - lucas@luckev.info
+Lucas Roth - lucas@luckev.info
 
 Project Link: [https://github.com/JungesMuensterschwarzach/App](https://github.com/JungesMuensterschwarzach/App)
 
